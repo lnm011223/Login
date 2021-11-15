@@ -4,13 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bg_edittext_normal.xml" value="0.23333333333333334" />
+        <entry key="app/src/main/res/drawable/bg_usertext_normal.xml" value="0.23282051282051283" />
         <entry key="app/src/main/res/drawable/button_drawable.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/ic_undraw_access_account_re_8spm.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/ic_undraw_my_password_d_6_kg.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/drawable/ic_undraw_my_password_d_6_kg__1_.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/ic_undraw_secure_login_pdn4.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/login.xml" value="0.22083333333333333" />
+        <entry key="app/src/main/res/layout/signin.xml" value="0.1" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/text_layout.xml" value="0.22083333333333333" />
       </map>
