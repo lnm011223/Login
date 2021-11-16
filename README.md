@@ -18,15 +18,15 @@
 
 ## 三、界面设计
 
-###### 1.登录界面
+#### 1.登录界面
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116204044367.png" alt="image-20211116204044367" style="zoom:33%;" />
 
-###### 2.登录报错提示，次数用Toast提示，次数清零后会弹出对话框
+#### 2.登录报错提示，次数用Toast提示，次数清零后会弹出对话框
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/%E6%88%AA%E5%B1%8F2021-11-16%20%E4%B8%8B%E5%8D%883.51.35.png" alt="截屏2021-11-16 下午3.51.35" style="zoom:33%;" />
 
-###### 3.重置密码界面
+#### 3.重置密码界面
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183310545.png" alt="image-20211116183310545" style="zoom:33%;" />
 
@@ -36,19 +36,19 @@
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116185752809.png" alt="image-20211116185752809" style="zoom:33%;" />
 
-###### 4.注册界面
+#### 4.注册界面
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183517457.png" alt="image-20211116183517457" style="zoom:33%;" />
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183825623.png" alt="image-20211116183825623" style="zoom:33%;" />
 
-###### 5.用户信息界面
+#### 5.用户信息界面
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183924714.png" alt="image-20211116183924714" style="zoom:33%;" />
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116190000405.png" alt="image-20211116190000405" style="zoom:33%;" />
 
-###### 6.深色模式及英文适配展示
+#### 6.深色模式及英文适配展示
 
 <img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116203929671.png" alt="image-20211116203929671" style="zoom:33%;" />
 
@@ -1174,7 +1174,7 @@ class MyDatabaseHelper(val context: Context,name: String,version: Int): SQLiteOp
 
 ## 六、难点和解决方案
 
-###### 1.状态栏图标颜色在白色背景以及深色模式下的适配
+#### 1.状态栏图标颜色在白色背景以及深色模式下的适配
 
 解决方案：
 
@@ -1200,13 +1200,13 @@ private fun isDarkTheme(context: Context): Boolean {
     }
 ```
 
-###### 2.用户信息的处理
+#### 2.用户信息的处理
 
 解决方案：
 
 可以利用Sqlite处理用户信息，增删查改分别对应注册，注销，登录，重置密码
 
-###### 3.用户下线等操作
+#### 3.用户下线等操作
 
 解决方案：
 
@@ -1244,11 +1244,9 @@ open class BaseActivity : AppCompatActivity() {
 
 ## 七、不足之处
 
-###### 1.用户信息以明文方式存在本地的数据里，不安全，可以加混淆的功能
-
-###### 2.一个真正的登录功能应该是从服务器匹配数据，可惜我暂时没有买服务器
-
-###### 3.还是有很多小细节没有顾及到，比如一些文字的配色懒得去处理了
+- 1.用户信息以明文方式存在本地的数据里，不安全，可以加混淆的功能
+- 2.一个真正的登录功能应该是从服务器匹配数据，可惜我暂时没有买服务器
+- 3.还是有很多小细节没有顾及到，比如一些文字的配色懒得去处理了
 
 ## 八、今后设想
 
