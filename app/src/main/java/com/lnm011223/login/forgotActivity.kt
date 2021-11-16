@@ -50,8 +50,9 @@ class forgotActivity : AppCompatActivity() {
                     val password_exist = cursor.getString(cursor.getColumnIndex("password"))
                     val email_exist = cursor.getString(cursor.getColumnIndex("email"))
                     if (account_exist==account && email_exist==email && account!= "" && email != ""){
+                        flag1 = false
                         if (password==password1 && password != ""){
-                            flag1 = false
+
                             val values = ContentValues()
                             values.put("password",password)
                             db.update("accountdata",values,"account = ?", arrayOf(account))

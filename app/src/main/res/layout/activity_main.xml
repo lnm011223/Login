@@ -75,14 +75,36 @@
             android:layout_width="match_parent"
             android:layout_height="85dp"
             android:orientation="vertical">
-
-            <TextView
-                android:layout_width="90dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/password"
-                android:textColor="#2196F3"
-                android:textSize="14sp" />
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/password"
+                    android:textColor="#2196F3"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/switch_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/show"
+                    android:gravity="end"
+                    android:textColor="#2196F3"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/show_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#2196F3" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/signin_passwordEdit"

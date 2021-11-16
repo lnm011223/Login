@@ -9,6 +9,8 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Build
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -62,6 +64,14 @@ class MainActivity : BaseActivity() {
             startActivity(intent)
             finish()
         }
+        show_check.setOnCheckedChangeListener { compoundButton, b ->
+            if (b){
+                signin_passwordEdit.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+            }else{
+                signin_passwordEdit.setTransformationMethod(PasswordTransformationMethod.getInstance())
+            }
+        }
+
         signin_Button.setOnClickListener {
             counter--
             var flag1 = true

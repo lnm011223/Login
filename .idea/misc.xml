@@ -11,8 +11,8 @@
         <entry key="app/src/main/res/drawable/ic_undraw_my_password_d_6_kg__1_.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/ic_undraw_secure_login_pdn4.xml" value="0.23333333333333334" />
         <entry key="app/src/main/res/layout/activity_forgot.xml" value="0.15833333333333333" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.15833333333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.209366391184573" />
+        <entry key="app/src/main/res/layout/activity_signup.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/login.xml" value="0.22083333333333333" />
         <entry key="app/src/main/res/layout/signin.xml" value="0.1" />
