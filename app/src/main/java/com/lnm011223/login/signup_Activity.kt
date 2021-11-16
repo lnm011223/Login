@@ -14,59 +14,45 @@ import androidx.core.view.WindowInsetsControllerCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_signup.*
 
-class signup_Activity : BaseActivity() {
+class signup_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
         val insetsController = WindowCompat.getInsetsController(
             window, window.decorView
         )
-        if (!isDarkTheme(this)) {
 
-            insetsController?.isAppearanceLightStatusBars = true
-
-        }
         insetsController?.hide(WindowInsetsCompat.Type.navigationBars())
-        insetsController?.systemBarsBehavior =
-            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        insetsController?.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        insetsController?.hide(WindowInsetsCompat.Type.statusBars())
 
         window.statusBarColor = Color.TRANSPARENT
 
-        val dbhelper = MyDatabaseHelper(this, "accountdata.db", 1)
-        already_text.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+
+
         signup_Button.setOnClickListener {
-            val db = dbhelper.writableDatabase
-            val email = signup_emailEdit.text.toString()
-            val account = signup_accountEdit.text.toString()
-            val password = signup_passwordEdit.text.toString()
-            val values = ContentValues().apply {
-                //组装数据
-                put("account", account)
-                put("email", email)
-                put("password", password)
-            }
-            db.insert("accountdata", null, values)
-            AlertDialog.Builder(this).apply {
-                setTitle("成功：")
-                setMessage("已成功创建账户，请回到登录界面")
+            val username = signup_accountEdit.text.toString()
+            val userpassword = signup_passwordEdit.text.toString()
+            if (username != "" && userpassword != "") {
+                AlertDialog.Builder(this).apply {
+                    setTitle("成功：")
+                    setMessage("已成功创建账户，请回到登录界面")
 
-                setPositiveButton("OK") { _, _ ->
-                    ActivityCollector.finishAll()
-                    val i = Intent(context, MainActivity::class.java)
-                    context.startActivity(i)
+                    setPositiveButton("OK") { _, _ ->
 
+                        val i = Intent(context, MainActivity::class.java)
+                        i.putExtra("account",username)
+                        i.putExtra("password",userpassword)
+                        context.startActivity(i)
+
+                        finish()
+
+                    }
+
+                    show()
                 }
-
-                show()
             }
         }
     }
-    private fun isDarkTheme(context: Context): Boolean {
-        val flag = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        return flag == Configuration.UI_MODE_NIGHT_YES
-    }
+
 }

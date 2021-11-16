@@ -4,33 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2196F3"
     tools:context=".MainActivity">
+
+
     <TextView
         android:id="@+id/signin_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="216dp"
         android:text="@string/welcome_back"
-        android:textColor="#2196F3"
+        android:textColor="#ffffff"
         android:textSize="24sp"
+
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/signin_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/signin_image"
-        android:layout_width="290dp"
-        android:layout_height="428dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_undraw_secure_login_pdn4"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="-105dp" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -52,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/account"
-                android:textColor="#2196F3"
+                android:textColor="#ffffff"
                 android:textSize="14sp" />
 
             <EditText
@@ -60,13 +50,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_drawable"
+                android:backgroundTint="#90CAF9"
                 android:inputType="textPersonName"
                 android:padding="5dp"
-                android:backgroundTint="#2196F3"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/bg_edittext_normal"
-                android:paddingStart="15dp"
-                />
+                android:paddingStart="15dp" />
 
         </LinearLayout>
 
@@ -81,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/password"
-                android:textColor="#2196F3"
+                android:textColor="#ffffff"
                 android:textSize="14sp" />
 
             <EditText
@@ -89,21 +78,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/bg_edittext_normal"
+                android:background="@drawable/button_drawable"
                 android:padding="5dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="#2196F3"
+                android:backgroundTint="#90CAF9"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"/>
-            <TextView
-                android:id="@+id/forgot"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/forgot_password"
-                android:textColor="#2196F3"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="end"
-                />
+
 
         </LinearLayout>
 
@@ -112,47 +93,41 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signin_Button"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
 
-        android:backgroundTint="#2196F3"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#ffffff"
+        android:paddingVertical="10dp"
         android:text="@string/sign_in"
         android:textAllCaps="false"
+        android:textColor="#2196F3"
         app:backgroundTint="#2196F3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:cornerRadius="100dp"
-        android:paddingVertical="10dp"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signin_Button">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/new_user"
-            android:textColor="#2196F3" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signin_up_Button"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/create_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="@string/create_an_account"
-            android:textColor="#2196F3"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#ffffff"
+        android:paddingVertical="10dp"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="#2196F3"
+        app:backgroundTint="#2196F3"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.652"
+        app:layout_constraintStart_toEndOf="@+id/signin_Button"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

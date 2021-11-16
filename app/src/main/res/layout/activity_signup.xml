@@ -4,30 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#9CCC65"
     tools:context=".signup_Activity">
-    <ImageView
-        android:id="@+id/signup_image"
-        android:layout_width="290dp"
-        android:layout_height="428dp"
-        app:srcCompat="@drawable/ic_undraw_my_password_d_6_kg__1_"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+
     <TextView
         android:id="@+id/signup_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="232dp"
         android:text="@string/create_account"
-        android:textColor="#8bc34a"
+        android:textColor="#ffffff"
         android:textSize="24sp"
+
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/signup_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="345dp"
@@ -48,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/email"
-                android:textColor="#8bc34a"
+                android:textColor="#ffffff"
                 android:textSize="14sp" />
 
             <EditText
@@ -58,9 +51,9 @@
                 android:layout_gravity="center_vertical"
                 android:inputType="textPersonName"
                 android:padding="5dp"
-                android:backgroundTint="#8bc34a"
+                android:backgroundTint="#C5E1A5"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/bg_edittext_normal"
+                android:background="@drawable/button_drawable"
                 android:paddingStart="15dp"/>
 
         </LinearLayout>
@@ -76,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/account"
-                android:textColor="#8bc34a"
+                android:textColor="#ffffff"
                 android:textSize="14sp" />
 
             <EditText
@@ -86,9 +79,9 @@
                 android:layout_gravity="center_vertical"
                 android:inputType="textPersonName"
                 android:padding="5dp"
-                android:backgroundTint="#8bc34a"
+                android:backgroundTint="#C5E1A5"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/bg_edittext_normal"
+                android:background="@drawable/button_drawable"
                 android:paddingStart="15dp"/>
 
         </LinearLayout>
@@ -104,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:text="@string/password"
-                android:textColor="#8bc34a"
+                android:textColor="#ffffff"
                 android:textSize="14sp" />
 
             <EditText
@@ -112,10 +105,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/bg_edittext_normal"
+                android:background="@drawable/button_drawable"
                 android:padding="5dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="#8bc34a"
+                android:backgroundTint="#C5E1A5"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"/>
         </LinearLayout>
@@ -129,9 +122,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         app:cornerRadius="100dp"
-        android:backgroundTint="#8bc34a"
+        android:backgroundTint="#ffffff"
         android:text="@string/sign_up"
         android:textAllCaps="false"
+        android:textColor="#9CCC65"
         app:backgroundTint="#8bc34a"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -141,30 +135,6 @@
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_Button">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/already_have_an_account"
-            android:textColor="#8bc34a" />
-
-        <TextView
-            android:id="@+id/already_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="@string/sign_in"
-            android:textColor="#8bc34a"
-            android:textStyle="bold" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

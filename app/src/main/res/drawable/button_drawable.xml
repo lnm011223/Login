@@ -5,7 +5,7 @@
     <!--设置背景色-->
     <solid android:color="#448AFF" />
     <!--设置圆角-->
-    <corners android:radius="105dip" />
+    <corners android:radius="5dip" />
     <padding
         android:bottom="12dp"
         android:left="63dp"

@@ -4,49 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#607D8B"
     tools:context=".userActivity">
 
-    <ImageView
-
-        android:id="@+id/user_image"
-        android:layout_width="290dp"
-        android:layout_height="428dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_undraw_access_account_re_8spm"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="-58dp" />
 
     <TextView
         android:id="@+id/user_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="244dp"
         android:text="@string/user_information"
-        android:textColor="#F9A826"
+        android:textColor="#ffffff"
         android:textSize="24sp"
+
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/user_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_image" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="289dp"
-        android:layout_height="120dp"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/user_text"
         android:layout_marginTop="10dp"
-        android:background="@drawable/bg_usertext_normal"
-        android:backgroundTint="#F9A826"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_text">
+        android:layout_marginHorizontal="10dp"
+        app:cardCornerRadius="10dp">
 
         <LinearLayout
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -55,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/account"
-                android:textColor="#F9A826"
+
                 android:textStyle="bold" />
 
             <TextView
@@ -65,60 +52,11 @@
                 android:layout_marginTop="5dp" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+    </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/email"
-                android:textColor="#F9A826"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/user_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp" />
-        </LinearLayout>
-    </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/signout_Button"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#F9A826"
-        android:paddingVertical="10dp"
-        android:text="@string/sign_out"
-        android:textAllCaps="false"
-        app:backgroundTint="#F9A826"
-        app:cornerRadius="100dp"
-        app:layout_constraintEnd_toStartOf="@+id/delete_Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        android:layout_marginTop="10dp"/>
 
-    <com.google.android.material.button.MaterialButton
-        app:strokeWidth="2dp"
-        app:strokeColor="#F9A826"
-        android:layout_marginTop="10dp"
-        android:textColor="#F9A826"
-        android:id="@+id/delete_Button"
-        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00000000"
-        android:paddingVertical="10dp"
-        android:text="@string/delete_account"
-        android:textAllCaps="false"
-        app:backgroundTint="#F9A826"
-        app:cornerRadius="100dp"
-        app:layout_constraintStart_toEndOf="@id/signout_Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
