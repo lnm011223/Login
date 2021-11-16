@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login">
         <activity
+            android:name=".forgotActivity"
+            android:exported="false" />
+        <activity
             android:name=".userActivity"
             android:exported="false" />
         <activity

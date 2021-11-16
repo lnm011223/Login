@@ -14,4 +14,10 @@
     <string name="already_have_an_account">已经注册账号?</string>
     <string name="user_information">用户信息</string>
     <string name="sign_out">退出登录</string>
+    <string name="forgot_password"><u>忘记密码?</u></string>
+    <string name="update_password">重置密码</string>
+    <string name="update">重置</string>
+    <string name="new_password">新密码：</string>
+    <string name="verify_new_password">确认新密码：</string>
+    <string name="delete_account">删除账户</string>
 </resources>

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
@@ -30,6 +31,7 @@ class userActivity : BaseActivity() {
         insetsController?.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
 
         window.statusBarColor = Color.TRANSPARENT
+        val dbhelper = MyDatabaseHelper(this, "accountdata.db", 1)
         val user_nametext = intent.getStringExtra("user_name")
         val user_emailtext = intent.getStringExtra("user_email")
         user_account.text = user_nametext
@@ -38,6 +40,25 @@ class userActivity : BaseActivity() {
             ActivityCollector.finishAll()
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
+        }
+        delete_Button.setOnClickListener {
+            val db = dbhelper.writableDatabase
+            db.delete("accountdata","account = ?", arrayOf(user_nametext))
+            AlertDialog.Builder(this).apply {
+                setTitle("成功：")
+                setMessage("已删除账号！")
+                setCancelable(false)
+                setPositiveButton("OK") { _, _ ->
+                    ActivityCollector.finishAll()
+                    val i = Intent(context, MainActivity::class.java)
+                    context.startActivity(i)
+                    finish()
+
+                }
+
+                show()
+            }
+
         }
     }
     private fun isDarkTheme(context: Context): Boolean {

@@ -55,6 +55,13 @@ class MainActivity : BaseActivity() {
             val intent = Intent(this,signup_Activity::class.java)
             startActivity(intent)
         }
+        forgot.setOnClickListener {
+            val account = signin_accountEdit.text.toString()
+            val intent = Intent(this,forgotActivity::class.java)
+            intent.putExtra("forgot_account",account)
+            startActivity(intent)
+            finish()
+        }
         signin_Button.setOnClickListener {
             counter--
             var flag1 = true
@@ -92,6 +99,7 @@ class MainActivity : BaseActivity() {
                         ActivityCollector.finishAll()
                         val i = Intent(context, MainActivity::class.java)
                         context.startActivity(i)
+                        finish()
 
                     }
 

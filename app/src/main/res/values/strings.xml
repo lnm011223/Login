@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Login</string>
     <string name="welcome_back">Welcome Back!</string>
-    <string name="account">Account:</string>
+    <string name="account">User name:</string>
     <string name="password">Password:</string>
     <string name="sign_in">Sign in</string>
     <string name="new_user">New user?</string>
@@ -13,5 +13,11 @@
     <string name="already_have_an_account">Already have an account?</string>
     <string name="user_information">User Information</string>
     <string name="sign_out">Sign Out</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="update_password">Reset your password</string>
+    <string name="update">Reset</string>
+    <string name="new_password">New password：</string>
+    <string name="verify_new_password">Verify new password：</string>
+    <string name="delete_account">Delete</string>
 
 </resources>
