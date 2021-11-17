@@ -1,14 +1,18 @@
 # 			登录注册界面的设计与实现说明文档 
 
+### 
 
 
-### 		
+
+
 
 
 
 ## 一、软件名称
 
 ​	简易登录注册界面
+
+> Github项目地址：https://github.com/lnm011223/Login
 
 ## 二、软件内容简介
 
@@ -26,7 +30,7 @@
 
 #### 2.重置密码界面
 
-> ![Reset](/Users/liangnuoming/Downloads/Reset.png)
+> ![Reset](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/Reset.png)
 >
 
 
@@ -60,7 +64,7 @@
 
 ### 1.Activity逻辑
 
-> ###### 1.MainActivity.kt
+> 1.MainActivity.kt
 
 ```kotlin
 package com.lnm011223.login
@@ -192,7 +196,7 @@ class MainActivity : BaseActivity() {
 }
 ```
 
-> ###### 2.signupActivity.kt
+> 2.signupActivity.kt
 
 ```kotlin
 package com.lnm011223.login
