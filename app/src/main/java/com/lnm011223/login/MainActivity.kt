@@ -26,11 +26,11 @@ class MainActivity : BaseActivity() {
 
 
     @SuppressLint("Range")
-    @RequiresApi(Build.VERSION_CODES.R)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //非常重要，没有这句话监听无法生效
-        window.setDecorFitsSystemWindows(false)
+
         setContentView(R.layout.activity_main)
 
         //icon color -> black

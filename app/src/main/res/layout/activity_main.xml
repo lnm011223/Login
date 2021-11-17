@@ -35,7 +35,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="345dp"
-        android:layout_height="155dp"
+        android:layout_height="190dp"
         android:layout_marginHorizontal="5dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +73,7 @@
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="85dp"
+            android:layout_height="115dp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"

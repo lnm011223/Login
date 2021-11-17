@@ -2,7 +2,7 @@
 
 
 
-
+### 		
 
 
 
@@ -20,43 +20,41 @@
 
 #### 1.登录界面
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116204044367.png" alt="image-20211116204044367" style="zoom:33%;" />
+> ![Sign in](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/Sign%20in.png)
 
-#### 2.登录报错提示，次数用Toast提示，次数清零后会弹出对话框
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/%E6%88%AA%E5%B1%8F2021-11-16%20%E4%B8%8B%E5%8D%883.51.35.png" alt="截屏2021-11-16 下午3.51.35" style="zoom:33%;" />
 
-#### 3.重置密码界面
+#### 2.重置密码界面
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183310545.png" alt="image-20211116183310545" style="zoom:33%;" />
+> ![Reset](/Users/liangnuoming/Downloads/Reset.png)
+>
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116185424958.png" alt="image-20211116185424958" style="zoom:33%;" />
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116185332473.png" alt="image-20211116185332473" style="zoom:33%;" />
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116185752809.png" alt="image-20211116185752809" style="zoom:33%;" />
+#### 3.注册界面
 
-#### 4.注册界面
+> ![Sign up](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/Sign%20up.png)
+>
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183517457.png" alt="image-20211116183517457" style="zoom:33%;" />
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183825623.png" alt="image-20211116183825623" style="zoom:33%;" />
 
-#### 5.用户信息界面
+#### 4.用户信息界面
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116183924714.png" alt="image-20211116183924714" style="zoom:33%;" />
+> ![User](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/User.png)
+>
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116190000405.png" alt="image-20211116190000405" style="zoom:33%;" />
 
-#### 6.深色模式及英文适配展示
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116203929671.png" alt="image-20211116203929671" style="zoom:33%;" />
+#### 5.深色模式及英文适配展示
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116190451578.png" alt="image-20211116190451578" style="zoom:33%;" />
+> ![dark and english](https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/dark%20and%20english.png)
+>
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116190527677.png" alt="image-20211116190527677" style="zoom:33%;" />
 
-<img src="https://gitee.com/lnm011223/lnm011223-picture/raw/master/uPic/image-20211116190629163.png" alt="image-20211116190629163" style="zoom:33%;" />
+
+
+
+
 
 ## 四、关键代码
 
@@ -93,11 +91,11 @@ class MainActivity : BaseActivity() {
 
 
     @SuppressLint("Range")
-    @RequiresApi(Build.VERSION_CODES.R)
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //非常重要，没有这句话监听无法生效
-        window.setDecorFitsSystemWindows(false)
+      
         setContentView(R.layout.activity_main)
 
         //icon color -> black
@@ -503,7 +501,7 @@ class forgotActivity : AppCompatActivity() {
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="345dp"
-        android:layout_height="155dp"
+        android:layout_height="190dp"
         android:layout_marginHorizontal="5dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -541,7 +539,7 @@ class forgotActivity : AppCompatActivity() {
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="85dp"
+            android:layout_height="115dp"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
