@@ -22,4 +22,5 @@
     <string name="delete_account">删除账户</string>
     <string name="show">显示密码</string>
     <string name="hide">隐藏密码</string>
+    <string name="remember">记住密码</string>
 </resources>

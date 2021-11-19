@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
     <TextView
         android:id="@+id/signin_text"
@@ -117,15 +118,39 @@
                 android:backgroundTint="#2196F3"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"/>
-            <TextView
-                android:id="@+id/forgot"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/forgot_password"
-                android:textColor="#2196F3"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="end"
-                />
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/remember"
+
+                    android:textColor="#2196F3"
+                    android:textSize="14sp" />
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/remember_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#2196F3" />
+
+                <TextView
+                    android:id="@+id/forgot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_password"
+                    android:textColor="#2196F3"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+
+                     />
+            </LinearLayout>
+
 
         </LinearLayout>
 

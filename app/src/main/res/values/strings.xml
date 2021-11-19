@@ -21,5 +21,6 @@
     <string name="delete_account">Delete</string>
     <string name="show">Show</string>
     <string name="hide">hide</string>
+    <string name="remember">Remember</string>
 
 </resources>

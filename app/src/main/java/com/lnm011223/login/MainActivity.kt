@@ -2,6 +2,7 @@ package com.lnm011223.login
 
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -11,6 +12,8 @@ import android.os.Bundle
 import android.os.Build
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.transition.Explode
+import android.view.Window
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -46,7 +49,13 @@ class MainActivity : BaseActivity() {
         )
         if (!isDarkTheme(this)){
 
-            insetsController?.isAppearanceLightStatusBars = true
+            //insetsController?.isAppearanceLightStatusBars = true
+            //insetsController?.isAppearanceLightNavigationBars = true
+            insetsController?.apply {
+                isAppearanceLightStatusBars = true
+
+
+            }
 
         }
         insetsController?.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
@@ -71,7 +80,15 @@ class MainActivity : BaseActivity() {
                 signin_passwordEdit.setTransformationMethod(PasswordTransformationMethod.getInstance())
             }
         }
-
+        val prefs = getPreferences(Context.MODE_PRIVATE)
+        val isremember = prefs.getBoolean("remember_password",false)
+        if (isremember) {
+            val account_remember = prefs.getString("account","")
+            val password_remember = prefs.getString("password","")
+            signin_accountEdit.setText(account_remember)
+            signin_passwordEdit.setText(password_remember)
+            remember_check.isChecked = true
+        }
         signin_Button.setOnClickListener {
             counter--
             var flag1 = true
@@ -79,6 +96,9 @@ class MainActivity : BaseActivity() {
             val password = signin_passwordEdit.text.toString()
             val db = dbhelper.writableDatabase
             val cursor = db.query("accountdata",null,null,null,null,null,null)
+            val editor = prefs.edit()
+
+
             if (cursor.moveToFirst()) {
                 do {
                     val account_exist = cursor.getString(cursor.getColumnIndex("account"))
@@ -86,6 +106,14 @@ class MainActivity : BaseActivity() {
                     val email_exist = cursor.getString(cursor.getColumnIndex("email"))
                     if (account_exist==account && password_exist==password && account!= "" && password != ""){
                         flag1 = false
+                        if (remember_check.isChecked) {
+                            editor.putBoolean("remember_password",true)
+                            editor.putString("account",account)
+                            editor.putString("password",password)
+                        }else{
+                            editor.clear()
+                        }
+                        editor.apply()
                         val intent = Intent(this,userActivity::class.java)
 
                         intent.putExtra("user_name",account)
