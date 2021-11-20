@@ -1,6 +1,6 @@
 # 			登录注册界面的设计与实现说明文档 
 
-### 
+
 
 
 
@@ -18,7 +18,7 @@
 
 一个有较为美观（个人认为）的登录，注册，重置密码，用户界面的软件，用了Sqlite增删查改用户信息，比较完整的模拟了登录，注册，忘记密码，下线，注销等功能，适配了深色模式（2021年怎么会还有app不支持深色模式啊）。
 
-实现了一些人性化的小细节，比如点击忘记密码会自动填充在登录界面输入的账号在重置密码界面，重置密码时如果账号和邮箱不匹配，会自动清除邮箱的已输入内容，显示密码，还有各种错误提醒，等等。
+实现了一些人性化的小细节，比如点击忘记密码会自动填充在登录界面输入的账号在重置密码界面，重置密码时如果账号和邮箱不匹配，会自动清除邮箱的已输入内容，显示密码,记住密码，还有各种错误提醒，等等。
 
 ## 三、界面设计
 
@@ -71,6 +71,7 @@ package com.lnm011223.login
 
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
@@ -80,6 +81,8 @@ import android.os.Bundle
 import android.os.Build
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.transition.Explode
+import android.view.Window
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -95,11 +98,11 @@ class MainActivity : BaseActivity() {
 
 
     @SuppressLint("Range")
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //非常重要，没有这句话监听无法生效
-      
+
         setContentView(R.layout.activity_main)
 
         //icon color -> black
@@ -115,7 +118,13 @@ class MainActivity : BaseActivity() {
         )
         if (!isDarkTheme(this)){
 
-            insetsController?.isAppearanceLightStatusBars = true
+            //insetsController?.isAppearanceLightStatusBars = true
+            //insetsController?.isAppearanceLightNavigationBars = true
+            insetsController?.apply {
+                isAppearanceLightStatusBars = true
+
+
+            }
 
         }
         insetsController?.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
@@ -140,7 +149,15 @@ class MainActivity : BaseActivity() {
                 signin_passwordEdit.setTransformationMethod(PasswordTransformationMethod.getInstance())
             }
         }
-
+        val prefs = getPreferences(Context.MODE_PRIVATE)
+        val isremember = prefs.getBoolean("remember_password",false)
+        if (isremember) {
+            val account_remember = prefs.getString("account","")
+            val password_remember = prefs.getString("password","")
+            signin_accountEdit.setText(account_remember)
+            signin_passwordEdit.setText(password_remember)
+            remember_check.isChecked = true
+        }
         signin_Button.setOnClickListener {
             counter--
             var flag1 = true
@@ -148,6 +165,9 @@ class MainActivity : BaseActivity() {
             val password = signin_passwordEdit.text.toString()
             val db = dbhelper.writableDatabase
             val cursor = db.query("accountdata",null,null,null,null,null,null)
+            val editor = prefs.edit()
+
+
             if (cursor.moveToFirst()) {
                 do {
                     val account_exist = cursor.getString(cursor.getColumnIndex("account"))
@@ -155,6 +175,14 @@ class MainActivity : BaseActivity() {
                     val email_exist = cursor.getString(cursor.getColumnIndex("email"))
                     if (account_exist==account && password_exist==password && account!= "" && password != ""){
                         flag1 = false
+                        if (remember_check.isChecked) {
+                            editor.putBoolean("remember_password",true)
+                            editor.putString("account",account)
+                            editor.putString("password",password)
+                        }else{
+                            editor.clear()
+                        }
+                        editor.apply()
                         val intent = Intent(this,userActivity::class.java)
 
                         intent.putExtra("user_name",account)
@@ -474,6 +502,7 @@ class forgotActivity : AppCompatActivity() {
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".MainActivity">
     <TextView
         android:id="@+id/signin_text"
@@ -587,15 +616,39 @@ class forgotActivity : AppCompatActivity() {
                 android:backgroundTint="#2196F3"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"/>
-            <TextView
-                android:id="@+id/forgot"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/forgot_password"
-                android:textColor="#2196F3"
-                android:layout_marginTop="5dp"
-                android:layout_gravity="end"
-                />
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/remember"
+
+                    android:textColor="#2196F3"
+                    android:textSize="14sp" />
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/remember_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="#2196F3" />
+
+                <TextView
+                    android:id="@+id/forgot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/forgot_password"
+                    android:textColor="#2196F3"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+
+                     />
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -1249,6 +1302,7 @@ open class BaseActivity : AppCompatActivity() {
 - 1.用户信息以明文方式存在本地的数据里，不安全，可以加混淆的功能
 - 2.一个真正的登录功能应该是从服务器匹配数据，可惜我暂时没有买服务器
 - 3.还是有很多小细节没有顾及到，比如一些文字的配色懒得去处理了
+- 4.实际上还是有点逻辑漏洞的，但是也足够用了
 
 ## 八、今后设想
 
