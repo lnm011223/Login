@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 
     @SuppressLint("Range")
-    @RequiresApi(Build.VERSION_CODES.R)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
